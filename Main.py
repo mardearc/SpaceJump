@@ -1,64 +1,87 @@
 import pygame
+import sys
+from Knight import Knight
+from Platform import Platform
 
-# Inicializamos pygame
+# Inicializar Pygame
 pygame.init()
-# Muestro una ventana de 800x600
-size = 800, 600
-screen = pygame.display.set_mode(size)
-# Cambio el título de la ventana
-pygame.display.set_caption("Juego BALL")
-# Inicializamos variables
-width, height = 800, 600
-speed = [1, 1]
-white = 255, 255, 255
-# Crea un objeto imagen pelota y obtengo su rectángulo
-ball = pygame.image.load("ball.png")
-ballrect = ball.get_rect()
-# Crea un objeto imagen bate y obtengo su rectángulo
-bate = pygame.image.load("bate.png")
-baterect = bate.get_rect()
-# Pongo el bate en el centro de la pantalla
-baterect.move_ip(400, 260)
-# Control de FPS
-clock = pygame.time.Clock()
 
-# Comenzamos el bucle del juego
-run = True
-while run:
-    # Limitamos los FPS
-    clock.tick(60)
+# Constantes
+azul = (128, 191, 255)
+white = (255, 255, 255)
+ANCHO = 500
+ALTO = 700
 
-    # Capturamos los eventos que se han producido
-    for event in pygame.event.get():
-        # Si el evento es salir de la ventana, terminamos
-        if event.type == pygame.QUIT:
-            run = False
+class Main:
+    def __init__(self):
+        self.size_ventana = (ANCHO, ALTO)
+        self.ventana = pygame.display.set_mode(self.size_ventana)
 
-    # Compruebo si se ha pulsado alguna tecla
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_UP]:
-        baterect = baterect.move(0, -5)
-    if keys[pygame.K_DOWN]:
-        baterect = baterect.move(0, 5)
+        self.knight = Knight(225, 0)
+        self.knightrect = self.knight.image.get_rect(topleft=(225, 0))
+        self.plataformas = [Platform(ANCHO, ALTO, i * 50) for i in range(14)]
 
-    # Muevo la pelota
-    ballrect = ballrect.move(speed)
+        # Control de FPS
+        self.clock = pygame.time.Clock()
 
-    # Compruebo si hay colisión con los bordes de la ventana
-    if ballrect.left < 0 or ballrect.right > width:
-        speed[0] = -speed[0]
-    if ballrect.top < 0 or ballrect.bottom > height:
-        speed[1] = -speed[1]
+        # Crear una fuente para la puntuación
+        self.font = pygame.font.Font(None, 36)
+        self.score = 0
 
-    # Compruebo si hay colisión entre el bate y la pelota
-    if baterect.colliderect(ballrect):
-        speed[0] = -speed[0]  # Cambio la dirección horizontal de la pelota
+        # Cargar sonidos
+        self.jump_sound = pygame.mixer.Sound("jump.wav")
+        self.jump_sound.set_volume(0.5)
 
-    # Pinto el fondo de blanco, dibujo el bate y la pelota, y actualizo la pantalla
-    screen.fill(white)
-    screen.blit(bate, baterect)
-    screen.blit(ball, ballrect)
-    pygame.display.flip()
+        # Cargar y reproducir música de fondo
+        pygame.mixer.music.load("musica_fondo.mp3")
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.play(-1)
 
-# Salgo de pygame
-pygame.quit()
+    def run(self):
+        while True:
+            self.clock.tick(60)
+            self.handle_events()
+            self.update()
+            self.draw()
+
+    def handle_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+    def update(self):
+        keys = pygame.key.get_pressed()
+        self.knight.update(keys, self.plataformas, self.jump_sound)
+
+        # Actualizar plataformas
+        for plataforma in self.plataformas:
+            plataforma.update(ANCHO, ALTO, self.knightrect)
+            # Si aterriza en una nueva plataforma, incrementa la puntuación
+            if self.knight.plataforma_nueva is not None and self.knight.plataforma_nueva != self.knight.plataforma_actual:
+                if self.knight.plataforma_actual is not None:
+                    if self.knight.plataforma_nueva.rect.top < self.knight.plataforma_actual.rect.top:
+                        self.score += 1
+                    if self.score % 10 == 0 and 1 < self.score < 100:  # Incrementa la velocidad de caída del personaje y de las plataformas
+                        for plataforma in self.plataformas:
+                            plataforma.velocidad += 0.25
+                        self.knight.velocidad_caida += 0.25
+
+                self.knight.plataforma_actual = self.knight.plataforma_nueva  # Actualiza la plataforma actual
+
+    def draw(self):
+        self.ventana.fill(azul)
+
+        # Dibujar plataformas
+        for plataforma in self.plataformas:
+            plataforma.draw(self.ventana)
+
+        # Dibujar caballero y puntuación
+        self.knight.draw(self.ventana)
+        score_text = self.font.render(f"Puntuación: {self.score}", True, white)
+        self.ventana.blit(score_text, (10, 10))
+
+        pygame.display.update()
+
+if __name__ == "__main__":
+    Main().run()

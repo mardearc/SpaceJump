@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2df1fcb-41e9-4a7b-b5d1-8a45892ed6e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceJump.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a2df1fcb-41e9-4a7b-b5d1-8a45892ed6e8" name="Changes" comment="Primera versión de SpaceJump, personaje principal agregado, plataforma agregada pero sin generador de plataformas">
+      <change afterPath="$PROJECT_DIR$/Knight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Platform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jump.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knightRunning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knight_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knight_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knight_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musica_fondo.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/platformsGreen.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceJump.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bate.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,17 +58,53 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Knight.executor": "Run",
     "Python.Main.executor": "Run",
+    "Python.Platform.executor": "Run",
+    "Python.Prueba.executor": "Run",
     "Python.SpaceJump.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/jesum/PycharmProjects/SpaceJump",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jesum\PycharmProjects\SpaceJump" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jesum\PycharmProjects\SpaceJump" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SpaceJump" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -78,6 +122,27 @@
       <option name="presentableId" value="Default" />
       <updated>1730128747342</updated>
     </task>
+    <task id="LOCAL-00001" summary="Primera versión de SpaceJump, personaje principal agregado, plataforma agregada pero sin generador de plataformas">
+      <option name="closed" value="true" />
+      <created>1730285030557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730285030557</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Primera versión de SpaceJump, personaje principal agregado, plataforma agregada pero sin generador de plataformas">
+      <option name="closed" value="true" />
+      <created>1730285072454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730285072454</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primera versión de SpaceJump, personaje principal agregado, plataforma agregada pero sin generador de plataformas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primera versión de SpaceJump, personaje principal agregado, plataforma agregada pero sin generador de plataformas" />
   </component>
 </project>
