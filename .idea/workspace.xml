@@ -65,21 +65,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Knight.executor": "Run",
-    "Python.Main.executor": "Run",
-    "Python.Menu.executor": "Run",
-    "Python.Menu_Principal.executor": "Run",
-    "Python.Platform.executor": "Run",
-    "Python.Prueba.executor": "Run",
-    "Python.SpaceJump.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jesum/PycharmProjects/CalculoVenal",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Knight.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Menu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Menu_Principal.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Platform.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Prueba.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SpaceJump.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jesum/PycharmProjects/CalculoVenal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jesum\PycharmProjects\SpaceJump" />
